@@ -41,4 +41,9 @@ public class Auditorium {
         this.vipSeats = vipSeats;
     }
 
+    @Override
+    public String toString() {
+        return "Auditorium [id=" + id + ", name=" + name + ", numberOfSeats=" + numberOfSeats + ", vipSeats="
+                + vipSeats + "]";
+    }
 }

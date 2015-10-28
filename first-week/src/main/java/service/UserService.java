@@ -2,12 +2,17 @@ package service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import service.api.IUserService;
 import dao.api.IUserDao;
 import domain.User;
 
+@Service("userService")
 public class UserService implements IUserService {
 
+    @Autowired
     private IUserDao userDao;
 
     public void register(User user) {

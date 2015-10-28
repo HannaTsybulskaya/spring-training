@@ -5,9 +5,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.stereotype.Repository;
+
 import dao.api.IUserDao;
 import domain.User;
 
+@Repository("userDao")
 public class UserDao implements IUserDao {
 
     private Map<String, User> users = new HashMap<String, User>();

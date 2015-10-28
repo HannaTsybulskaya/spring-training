@@ -7,19 +7,21 @@ public class Event {
     private String id;
     private String name;
     private Date date;
-    private String basePrice;
+    private Double basePrice;
     private String rating;
+    private String auditoriumId;
 
     public Event() {
         // default
     }
 
-    public Event(String id, String name, Date date, String basePrice, String rating) {
+    public Event(String id, String name, Date date, Double basePrice, String rating, String auditoriumId) {
         this.id = id;
         this.name = name;
         this.date = date;
         this.basePrice = basePrice;
         this.rating = rating;
+        this.auditoriumId = auditoriumId;
     }
 
     public String getId() {
@@ -46,11 +48,11 @@ public class Event {
         this.date = date;
     }
 
-    public String getBasePrice() {
+    public Double getBasePrice() {
         return basePrice;
     }
 
-    public void setBasePrice(String basePrice) {
+    public void setBasePrice(Double basePrice) {
         this.basePrice = basePrice;
     }
 
@@ -60,6 +62,20 @@ public class Event {
 
     public void setRating(String rating) {
         this.rating = rating;
+    }
+
+    public String getAuditoriumId() {
+        return auditoriumId;
+    }
+
+    public void setAuditoriumId(String auditoriumId) {
+        this.auditoriumId = auditoriumId;
+    }
+
+    @Override
+    public String toString() {
+        return "Event [id=" + id + ", name=" + name + ", date=" + date + ", basePrice=" + basePrice + ", rating="
+                + rating + ", auditoriumId=" + auditoriumId + "]";
     }
 
 }

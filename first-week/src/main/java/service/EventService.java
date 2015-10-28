@@ -3,6 +3,7 @@ package service;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import service.api.IEventService;
@@ -10,9 +11,10 @@ import dao.api.IEventDao;
 import domain.Auditorium;
 import domain.Event;
 
-@Service
+@Service("eventService")
 public class EventService implements IEventService {
 
+    @Autowired
     private IEventDao eventDao;
 
     public void create(Event event) {

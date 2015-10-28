@@ -6,9 +6,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.stereotype.Repository;
+
 import dao.api.IEventDao;
 import domain.Event;
 
+@Repository("eventDao")
 public class EventDao implements IEventDao {
 
     private Map<String, Event> events = new HashMap<String, Event>();
