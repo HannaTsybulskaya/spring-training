@@ -7,7 +7,7 @@ public class Event {
     private String id;
     private String name;
     private Date date;
-    private Double basePrice;
+    private double basePrice;
     private String rating;
     private String auditoriumId;
 
@@ -15,7 +15,7 @@ public class Event {
         // default
     }
 
-    public Event(String id, String name, Date date, Double basePrice, String rating, String auditoriumId) {
+    public Event(String id, String name, Date date, double basePrice, String rating, String auditoriumId) {
         this.id = id;
         this.name = name;
         this.date = date;
@@ -48,11 +48,11 @@ public class Event {
         this.date = date;
     }
 
-    public Double getBasePrice() {
+    public double getBasePrice() {
         return basePrice;
     }
 
-    public void setBasePrice(Double basePrice) {
+    public void setBasePrice(double basePrice) {
         this.basePrice = basePrice;
     }
 
