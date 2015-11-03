@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import service.api.IUserService;
+import dao.api.IBookingDao;
 import dao.api.IUserDao;
+import domain.BookedTicket;
 import domain.User;
 
 @Service("userService")
@@ -14,6 +16,9 @@ public class UserService implements IUserService {
 
     @Autowired
     private IUserDao userDao;
+
+    @Autowired
+    private IBookingDao bookingDao;
 
     public void register(User user) {
         userDao.create(user);
@@ -35,8 +40,8 @@ public class UserService implements IUserService {
         return userDao.getUsersByName(name);
     }
 
-    public void getBookedTickets(User user) {
-        // TODO Auto-generated method stub
+    public List<BookedTicket> getBookedTickets(User user) {
+        return bookingDao.getBookedTickets(user);
     }
 
     public void setUserDao(IUserDao userDao) {

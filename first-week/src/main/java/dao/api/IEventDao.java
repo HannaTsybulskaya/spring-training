@@ -20,4 +20,5 @@ public interface IEventDao {
 
     /** returns events from now till the ‘to’ date (OPTIONAL) */
     List<Event> getNextEvents(Date to);
+
 }

@@ -10,10 +10,15 @@
         <property name="discountPercent" value="5" />
     </bean>
 
+    <bean id="tenthTicketDiscountStrategy" class="domain.TenthTicketDiscountStrategy">
+        <property name="discountPercent" value="50" />
+    </bean>
+
     <bean id="discountService" class="service.DiscountService">
         <property name="strategies">
             <list>
                 <ref bean="birthdayStrategy" />
+                <ref bean="tenthTicketDiscountStrategy" />
             </list>
         </property>
     </bean>

@@ -7,15 +7,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import service.api.IEventService;
+import dao.api.IEventAuditoriumDao;
 import dao.api.IEventDao;
-import domain.Auditorium;
 import domain.Event;
+import domain.EventAuditorium;
 
 @Service("eventService")
 public class EventService implements IEventService {
 
     @Autowired
     private IEventDao eventDao;
+
+    @Autowired
+    private IEventAuditoriumDao eventAuditoriumDao;
 
     public void create(Event event) {
         eventDao.create(event);
@@ -41,8 +45,8 @@ public class EventService implements IEventService {
         return eventDao.getNextEvents(to);
     }
 
-    public void assignAuditorium(Event event, Auditorium auditorium, Date date) {
-        // TODO Auto-generated method stub
+    public EventAuditorium assignAuditorium(String eventId, String auditoriumId, Date date) {
+        return eventAuditoriumDao.assignAuditorium(eventId, auditoriumId, date);
     }
 
     public void setEventDao(IEventDao eventDao) {

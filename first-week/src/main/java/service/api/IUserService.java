@@ -2,6 +2,7 @@ package service.api;
 
 import java.util.List;
 
+import domain.BookedTicket;
 import domain.User;
 
 public interface IUserService {
@@ -16,6 +17,5 @@ public interface IUserService {
 
     List<User> getUsersByName(String name);
 
-    void getBookedTickets(User user);
-
+    List<BookedTicket> getBookedTickets(User user);
 }

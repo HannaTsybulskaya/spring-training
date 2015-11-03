@@ -1,18 +1,13 @@
 package domain;
 
-import static java.util.Calendar.DAY_OF_MONTH;
-import static org.apache.commons.lang3.time.DateUtils.truncate;
-
-import java.util.Calendar;
-
-import org.apache.commons.lang3.time.DateUtils;
+import java.util.Date;
 
 public class BirthdayStrategy extends PercentDiscountStrategy {
 
-    public double getDiscount(User user, Event event) {
-        if (truncate(user.getBirthday(), DAY_OF_MONTH).equals(
-                DateUtils.truncate(event.getDate(), Calendar.DAY_OF_MONTH))) {
-            return super.getDiscount(user, event);
+    @SuppressWarnings("deprecation")
+    public double getDiscount(User user, Event event, Date date) {
+        if (user.getBirthday().getDate() == date.getDate() && user.getBirthday().getMonth() == date.getMonth()) {
+            return super.getDiscount(user, event, date);
         }
         return 0;
     }

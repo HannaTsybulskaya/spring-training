@@ -3,18 +3,21 @@ package service;
 import java.util.Date;
 import java.util.List;
 
+import service.api.IDiscountService;
 import domain.Event;
 import domain.IDiscountStrategy;
 import domain.User;
-import service.api.IDiscountService;
 
 public class DiscountService implements IDiscountService {
 
     private List<IDiscountStrategy> strategies;
 
     public double getDiscount(User user, Event event, Date date) {
-        // TODO Auto-generated method stub
-        return 0;
+        double discount = 0;
+        for (IDiscountStrategy strategy : strategies) {
+            discount += strategy.getDiscount(user, event, date);
+        }
+        return discount;
     }
 
     public void setStrategies(List<IDiscountStrategy> strategies) {

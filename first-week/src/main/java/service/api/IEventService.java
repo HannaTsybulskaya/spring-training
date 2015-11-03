@@ -3,8 +3,8 @@ package service.api;
 import java.util.Date;
 import java.util.List;
 
-import domain.Auditorium;
 import domain.Event;
+import domain.EventAuditorium;
 
 public interface IEventService {
 
@@ -22,6 +22,8 @@ public interface IEventService {
     /** returns events from now till the ‘to’ date (OPTIONAL) */
     List<Event> getNextEvents(Date to);
 
-    /** assign auditorium for event for specific date */
-    void assignAuditorium(Event event, Auditorium auditorium, Date date);
+    /** assign auditorium for event for specific date 
+     * @return TODO*/
+    EventAuditorium assignAuditorium(String eventId, String auditoriumId, Date date);
+
 }

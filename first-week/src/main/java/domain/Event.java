@@ -1,27 +1,21 @@
 package domain;
 
-import java.util.Date;
-
 public class Event {
 
     private String id;
     private String name;
-    private Date date;
     private double basePrice;
     private String rating;
-    private String auditoriumId;
 
     public Event() {
         // default
     }
 
-    public Event(String id, String name, Date date, double basePrice, String rating, String auditoriumId) {
+    public Event(String id, String name, double basePrice, String rating) {
         this.id = id;
         this.name = name;
-        this.date = date;
         this.basePrice = basePrice;
         this.rating = rating;
-        this.auditoriumId = auditoriumId;
     }
 
     public String getId() {
@@ -40,14 +34,6 @@ public class Event {
         this.name = name;
     }
 
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
     public double getBasePrice() {
         return basePrice;
     }
@@ -64,18 +50,9 @@ public class Event {
         this.rating = rating;
     }
 
-    public String getAuditoriumId() {
-        return auditoriumId;
-    }
-
-    public void setAuditoriumId(String auditoriumId) {
-        this.auditoriumId = auditoriumId;
-    }
-
     @Override
     public String toString() {
-        return "Event [id=" + id + ", name=" + name + ", date=" + date + ", basePrice=" + basePrice + ", rating="
-                + rating + ", auditoriumId=" + auditoriumId + "]";
+        return "Event [id=" + id + ", name=" + name + ", basePrice=" + basePrice + ", rating=" + rating + "]";
     }
 
 }
